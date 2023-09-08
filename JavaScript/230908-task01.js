@@ -38,3 +38,19 @@ function knightVsKing(knightPosition, kingPosition) {
     }
     return "None"
 }
+
+// ===============  Olesia ===============
+function knightVsKing(knightPosition, kingPosition) {
+    const rank = Math.abs(knightPosition[0] - kingPosition[0]);
+    const file = Math.abs(knightPosition[1].charCodeAt(0) - kingPosition[1].charCodeAt(0));
+
+    if (rank === 1 && file === 2) {
+        return 'Knight';
+    } else if (rank === 2 && file === 1) {
+        return 'Knight';
+    } else if (rank <= 1 && file <= 1) {
+        return 'King';
+    } else {
+        return 'None';
+    }
+}
