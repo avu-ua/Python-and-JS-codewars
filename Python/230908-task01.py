@@ -47,3 +47,24 @@ def knight_vs_king(knight_position, king_position):
     elif abs(king[0] - knight[0]) <= 1 and abs(king[1] - knight[1]) <= 1:
         return "King"
     return "None"
+
+# ===============  Olesia ===============
+def knight_vs_king (knight_position, king_position):
+    ranks =[1, 2, 3, 4, 5, 6, 7, 8]
+    files = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+    knight_rank, knight_file = ranks.index(knight_position[0]), files.index(knight_position[1])
+    king_rank, king_file = ranks.index(king_position[0]), files.index(king_position[1])
+
+    knight_moves = [(1, 2), (1, -2), (-1, 2), (-1, -2), (2, 1), (2, -1), (-2, 1), (-2, -1)]
+    king_moves = [(1, 1), (1, -1), (-1, 1), (-1, -1), (0, 1), (0, -1), (-1, 0), (1, 0)]
+
+    for i, j in knight_moves:
+        if king_rank == knight_rank + i and king_file == knight_file + j:
+            return "Knight"
+
+    for a, b in king_moves:
+        if knight_rank == king_rank + a and knight_file == king_file + b:
+            return "King"
+
+    return "None"
