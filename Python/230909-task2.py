@@ -17,3 +17,7 @@ def solution(start, finish):
             start += 3
         i += 1
     return i
+
+# Slava
+def solution(start, finish):
+    return (finish - start) // 3 + (finish - start) % 3

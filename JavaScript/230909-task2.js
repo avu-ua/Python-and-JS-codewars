@@ -13,3 +13,8 @@ def solution(start, finish):{
     n = finish - start;
     return Math.floor(n / 3)  + n % 3
 }
+
+// ===============  Slava ===============
+function solution(start, finish) {
+  return Math.floor((finish - start) / 3) + (finish - start) % 3
+}
