@@ -38,10 +38,11 @@ def knight_vs_king(knight_position, king_position):
 
 
 # ===============  Yuliia ===============
-def knight_vs_king (knight_position, king_position):
+def knight_vs_king(knight_position, king_position):
     knight = [int(knight_position[0]), ord(knight_position[1]) - ord('A') + 1]
     king = [int(king_position[0]), ord(king_position[1]) - ord('A') + 1]
-    if (abs(king[0] - knight[0]) == 2 and abs(king[1] - knight[1]) == 1) or (abs(king[0] - knight[0]) == 1 and abs(king[1] - knight[1]) == 2):
+    if (abs(king[0] - knight[0]) == 2 and abs(king[1] - knight[1]) == 1) or (
+            abs(king[0] - knight[0]) == 1 and abs(king[1] - knight[1]) == 2):
         return "Knight"
     elif abs(king[0] - knight[0]) <= 1 and abs(king[1] - knight[1]) <= 1:
         return "King"
