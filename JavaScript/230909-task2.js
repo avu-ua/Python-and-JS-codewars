@@ -9,7 +9,9 @@ function solution(start, finish)
 
 
 // ===============  Olesia ===============
-def solution(start, finish):{
-    n = finish - start;
-    return Math.floor(n / 3)  + n % 3
+function solution(start, finish) {
+  const n = finish - start;
+  return Math.floor(n / 3)  +  n % 3
 }
+
+console.log(solution(1, 5));
