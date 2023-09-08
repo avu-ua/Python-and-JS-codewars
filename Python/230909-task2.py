@@ -18,4 +18,10 @@ def solution(start, finish):
         i += 1
     return i
 
+<<<<<<< HEAD
 
+=======
+# Slava
+def solution(start, finish):
+    return (finish - start) // 3 + (finish - start) % 3
+>>>>>>> 7adb6b2e12a1e455a791f4c48e6f8ba38eedc8c4
