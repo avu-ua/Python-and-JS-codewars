@@ -54,3 +54,24 @@ function knightVsKing(knightPosition, kingPosition) {
         return 'None';
     }
 }
+
+// ===============  Mariia ===============
+function knightVsKing(knight, king) {
+    const knightMoves = [[1,-2], [2,-1], [2,1], [1,2], [-1,2], [-2,1], [-2,-1], [-1,-2]];
+    const kingMoves = [[0,-1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1]];
+    
+    for (const move of knightMoves) {
+      const moveNow = [move[0] + knight[0], move[1] + knight[1].charCodeAt(0)];
+      if (moveNow[0] === king[0] && moveNow[1] === king[1].charCodeAt(0)) {
+        return "Knight";
+      }
+    }
+    
+    for (const move of kingMoves) {
+      const moveNow = [move[0] + king[0], move[1] + king[1].charCodeAt(0)];
+      if (moveNow[0] === knight[0] && moveNow[1] === knight[1].charCodeAt(0)) {
+        return "King";
+      }
+    }
+    return "None";
+  }

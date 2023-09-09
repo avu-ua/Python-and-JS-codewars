@@ -21,3 +21,15 @@ def duplicate_encode(word):
     return my_str
 
 print(duplicate_encode("xwsyZDbr@GaRxA! G@RSs"))
+
+# ===============  Mariia ===============
+def duplicate_encode(word):
+    lower_word = word.lower()
+    result = ''
+    for i in lower_word:
+        counter = lower_word.count(i)
+        if counter > 1:
+            result +=')'
+        else:
+            result +='('
+    return result
