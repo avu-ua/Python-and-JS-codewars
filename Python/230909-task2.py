@@ -25,3 +25,13 @@ def solution(start, finish):
     return (finish - start) // 3 + (finish - start) % 3
 
 
+# ===============  Yuliia ===============
+def solution(start, finish):  
+    jumps = 0
+    while start < finish:
+        if start + 3 <= finish:
+            start += 3
+        else:
+            start += 1
+        jumps += 1
+    return jumps
