@@ -6,3 +6,14 @@
 // in the new string is "(" if that character appears only once in the original string, or ")"
 // if that character appears more than once in the original string. Ignore capitalization
 // when determining if a character is a duplicate.
+
+// ===============  Slava ===============
+
+function duplicateEncode(word){
+    const wordLower = word.toLowerCase()
+    let encodedWord = ''
+    for (const char of wordLower) {
+        encodedWord += wordLower.split(char).length < 3 ? '(' : ')'
+    }
+    return encodedWord
+}

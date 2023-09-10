@@ -33,3 +33,10 @@ def duplicate_encode(word):
         else:
             result +='('
     return result
+
+# ===============  Slava ===============
+def duplicate_encode(word):
+    new_string = ''
+    for char in word.lower():
+        new_string += '(' if word.lower().count(char) == 1 else ')'
+    return new_string
