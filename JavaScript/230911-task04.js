@@ -14,3 +14,17 @@
 //Specifications
 //Create the function off, that receives the nth switch as argument n. The function should return an ascending
 //array containing all of the switch numbers that remain off after Bob completes his revenge.
+
+
+// ---------------- Slava ----------------
+function off(n) {
+    const switchesOff = Array.apply(null, Array(n)).map((x, i) => i + 1);
+    step = 2
+    do {
+      for (index = step - 1; index < switchesOff.length; index += step) {
+          switchesOff[index] = switchesOff[index] ? false : index + 1
+      }
+      step++
+    } while (step <= n)
+    return switchesOff.filter( x => x !== false)
+}

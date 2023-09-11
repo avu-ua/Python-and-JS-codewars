@@ -1,4 +1,4 @@
-#Disgruntled Employee
+# Disgruntled Employee
 # https://www.codewars.com/kata/541103f0a0e736c8e40011d5/python
 
 # ---------------------- DESCRIPTION ----------------------
@@ -14,3 +14,14 @@
 # Specifications
 # Create the function off, that receives the nth switch as argument n. The function should return an ascending
 # array containing all of the switch numbers that remain off after Bob completes his revenge.
+
+
+# ------------------------ Slava ------------------------
+def off(n):
+    switches = [False] * n
+    step = 2
+    while step <= n:
+        for index in range(step - 1, n, step):
+            switches[index] = not switches[index]
+        step += 1
+    return [index + 1 for index, value in list(filter(lambda x: not x[1], enumerate(switches)))]
