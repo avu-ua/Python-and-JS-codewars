@@ -25,3 +25,24 @@ def off(n):
             switches[index] = not switches[index]
         step += 1
     return [index + 1 for index, value in list(filter(lambda x: not x[1], enumerate(switches)))]
+
+# ------------------------ Olesia ------------------------
+def off(n):
+    result = []
+    my_list = []
+    for i in range(n):
+        my_list.append(0)
+    a = 1
+    b = 2
+    for i in my_list:
+        for i in range(a, n, b):
+            if my_list[i] == 1:
+                my_list[i] = 0
+            else:
+                my_list[i] = 1
+        a += 1
+        b += 1
+    for j in range(len(my_list)):
+        if my_list[j] == 0:
+            result.append(j+1)
+    return result
