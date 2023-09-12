@@ -49,3 +49,14 @@ def off(n):
 
 print(off(12))
 
+
+# ------------------------ Mariia ------------------------
+def off(n):
+    switch_count = {k:1 for k in(range(1,n+1))}
+    # counter = 1
+    for i in range(1,n+1):
+        for x in range(i,n+1,i):
+            switch_count[x] *= -1
+    
+    indexes_of_off = [a for a in switch_count if switch_count[a]==-1]
+    return indexes_of_off
