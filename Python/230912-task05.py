@@ -28,3 +28,16 @@ def high(x):
     return max_value
 
 print(high('up taxi aaaaaaaaaaaaa'))
+
+# ------------------------ Mariia ------------------------
+import functools
+
+def high(x):
+    words_array = (x.lower()).split()
+    counter = functools.reduce(lambda x, y: x +ord(y)-ord("a")+1 , words_array[0], 0)
+    bigger_word = words_array[0]
+    for i in words_array:
+        if functools.reduce(lambda x, y: x +ord(y)-ord("a")+1 , i, 0) > counter:
+            counter = functools.reduce(lambda x, y: x +ord(y)-ord("a")+1 , i, 0)
+            bigger_word = i
+    return bigger_word
