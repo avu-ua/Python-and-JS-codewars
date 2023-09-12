@@ -46,3 +46,6 @@ def off(n):
         if my_list[j] == 0:
             result.append(j+1)
     return result
+
+print(off(12))
+
