@@ -15,3 +15,19 @@ def pig_it(text):
             lst_text[counter] = x[1:-1] + x[0] + "ay" + x[-1]
         counter +=1
     return " ".join(lst_text)
+
+# ------------------------ Olesia ------------------------
+def pig_it(text):
+    special_characters = '"!@#$%^&*()-+?_=,<>/"'
+    my_list = []
+    for i in text.split():
+        if i not in special_characters:
+            a = i[0]
+            b = i[1::]
+            y = b + a + "ay"
+            my_list.append(y)
+
+    if text[-1] in special_characters:
+        return " ".join(my_list) + " " + text[-1]
+    else:
+        return " ".join(my_list)
