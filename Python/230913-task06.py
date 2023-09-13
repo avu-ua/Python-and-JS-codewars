@@ -16,6 +16,11 @@ def pig_it(text):
         counter +=1
     return " ".join(lst_text)
 
+#  Optimise my code:
+def pig_it(text):
+    lst_text = list(text.split())
+    return ' '.join([x[1:] + x[0] + "ay" if x[-1].isalpha() else x for x in lst_text])
+
 # ------------------------ Olesia ------------------------
 def pig_it(text):
     special_characters = '"!@#$%^&*()-+?_=,<>/"'
