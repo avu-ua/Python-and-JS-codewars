@@ -40,3 +40,16 @@ def duplicate_encode(word):
     for char in word.lower():
         new_string += '(' if word.lower().count(char) == 1 else ')'
     return new_string
+
+# ===============  Yuliia ===============
+def duplicate_encode(word):
+    new_word = word.lower()
+    result = []
+    for i in new_word:
+        count_letter = new_word.count(i)
+        if count_letter == 1:
+            result.append("(")
+        else:
+            result.append(")")
+    result_string = "".join(result)
+    return result_string
