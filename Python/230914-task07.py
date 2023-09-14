@@ -16,6 +16,18 @@ def timer(limit):
         return inner
     return decorator
 
+# ------------------------ Mariia ------------------------
+import time
+def timer(limit):
+    def calc_time(func):
+        def calc(*args, **kwargs):
+            start = time.time()
+            func(*args, **kwargs)
+            end = time.time()
+            return end-start < limit
+        return calc
+    return calc_time
+
 
 # Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
 # https://www.codewars.com/kata/5626b561280a42ecc50000d1/train/python
@@ -30,3 +42,14 @@ def sum_dig_pow(a, b):
         if sum_numbers == i:
             my_list.append(sum_numbers)
     return my_list
+
+
+# ------------------------ Mariia ------------------------
+def sum_dig_pow(a, b): # range(a, b + 1) will be studied by the function
+    needed_numbers = []
+    for x in range(a, b+1):
+        my_iter = str(x)
+        num_power_list = [int(digit)**(y+1) for y, digit in enumerate(my_iter)]
+        if sum(num_power_list) == x:
+            needed_numbers.append(x)
+    return needed_numbers
