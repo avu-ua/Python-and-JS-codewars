@@ -13,12 +13,9 @@ class TankState:
 class Tank:
     def __init__(self):
         self.state = TankState()
-
     def set_state(self, state):
         self.state = state
-
     def can_move(self):
         return self.state.can_move
-
     def damage(self):
         return self.state.damage
