@@ -42,3 +42,8 @@ def high(x):
             bigger_word = i
     return bigger_word
 
+
+# --------------- Slava ---------------------------
+def high(x):
+    values = [sum(ord(i) - 96 for i in word) for word in x.split()]
+    return x.split()[values.index(max(values))]
