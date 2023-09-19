@@ -30,11 +30,11 @@ def to_weird_case(words):
         sort_words.append(sort_word)
     return " ".join(sort_words)
 
+def to_weird_case(words):
+    return ' '.join(''.join(word[x].upper() if x % 2 == 0 else word[x].lower() for x in range(0, len(word))) for word in words.split())
 
 #Build a pile of Cubes
 #https://www.codewars.com/kata/5592e3bd57b64d00f3000047/train/python
 
 # ---------------------- Slava -----------------------------
 
-def to_weird_case(words):
-    return ' '.join(''.join(word[x].upper() if x % 2 == 0 else word[x].lower() for x in range(0, len(word))) for word in words.split())
