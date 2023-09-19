@@ -36,3 +36,8 @@ def pig_it(text):
         return " ".join(my_list) + " " + text[-1]
     else:
         return " ".join(my_list)
+    
+    
+# -------------------------------- Slava ---------------------------------
+def pig_it(text):
+    return ' '.join([word[1:] + word[0] + 'ay' if word.isalpha() else word[0] for word in text.split()])
