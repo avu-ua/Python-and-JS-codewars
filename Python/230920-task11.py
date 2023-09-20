@@ -12,7 +12,7 @@
 def get_last_digit(index):
     x, y = 0, 1
     for i in range(index-1):
-        num = (x + y) % 10
+        num = x + y
         x = y
         y = num
     return y % 10
