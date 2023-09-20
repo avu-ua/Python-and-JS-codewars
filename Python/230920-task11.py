@@ -8,3 +8,11 @@
 # very big numbers (bigger than integer type can contain), so, please, 
 # be careful with overflow.
 
+# ------------------------ Olesia ------------------------
+def get_last_digit(index):
+    x, y = 0, 1
+    for i in range(index-1):
+        num = (x + y) % 10
+        x = y
+        y = num
+    return y % 10
