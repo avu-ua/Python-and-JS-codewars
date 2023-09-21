@@ -9,3 +9,16 @@
 # [1, 2, 3] --> "321" (3-2-1)
 # [3, 30, 34, 5, 9] --> "9534330" (9-5-34-3-30)
 # The results will be large so make sure to return a string.
+
+# ------------------------ Olesia ------------------------
+def biggest(nums):
+
+    def custom_compare(x):
+        return x * 3
+
+    nums_str = list(map(str, nums))
+    nums_str = ''.join(sorted(nums_str, key=custom_compare, reverse= True))
+
+    if int(nums_str) > 0:
+        return nums_str
+    return 0
