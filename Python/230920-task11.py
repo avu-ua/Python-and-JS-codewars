@@ -16,3 +16,14 @@ def get_last_digit(index):
         x = y
         y = num
     return y % 10
+
+# -------------------- Slava ----------------------------
+def get_last_digit(index):
+    if index < 2: return 1
+    number_2 = 1
+    number_1 = 1
+    for i in range(2, index):
+        number_curr = number_1 + number_2
+        number_2 = number_1
+        number_1 = number_curr
+    return number_curr % 10
