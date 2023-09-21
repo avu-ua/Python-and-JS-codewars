@@ -22,3 +22,18 @@ def biggest(nums):
     if int(nums_str) > 0:
         return nums_str
     return 0
+
+# ------------------------ Mariia ------------------------
+import functools
+def compare(x, y):
+    xy = int(str(x) + str(y))
+    yx = int(str(y) + str(x))
+    return yx - xy
+
+def biggest(nums):
+    nums.sort(key=functools.cmp_to_key(compare))
+    result = ''.join(map(str, nums))
+    
+    if result[0] == '0':
+        return '0'    
+    return result
