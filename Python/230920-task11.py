@@ -27,3 +27,22 @@ def get_last_digit(index):
         number_2 = number_1
         number_1 = number_curr
     return number_curr % 10
+
+# ------------------------ Mariia ------------------------
+import sys
+sys.set_int_max_str_digits(0)
+def get_last_digit(index):
+    fib_list = [0,1]
+    if index <= 1:
+        return fib_list[index]
+    else:
+        for x in range(2,index+1):
+            fib_list.append(fib_list[x-1] + fib_list[x-2])
+        return int(str(fib_list[index])[-1])
+    
+# Покращена версія))
+def get_last_digit(index):
+    x,y = 1,1
+    while index > 1:
+        x, y, index = y, x+y, index-1
+    return x%10
