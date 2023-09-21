@@ -38,3 +38,4 @@ def to_weird_case(words):
 
 def to_weird_case(words):
     return ' '.join(''.join(word[x].upper() if x % 2 == 0 else word[x].lower() for x in range(0, len(word))) for word in words.split())
+
