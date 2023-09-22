@@ -21,4 +21,4 @@ def biggest(nums):
 
     if int(nums_str) > 0:
         return nums_str
-    return 0
+    return str(0)
