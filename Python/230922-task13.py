@@ -35,3 +35,19 @@ def typist(s):
 # ----- SOLUTION 2 - One-liner but confusing ------------
 def typist(s):
     return sum(list(map(lambda x: 1 if (x == 0 and s[x].isupper()) or (len(s) > 1 and x > 0 and s[x].islower() != s[x-1].islower()) else 0, dict(enumerate(s))))) + len(s)
+
+# --------------- Olesia -------------------------
+def typist(s):
+    counter = 1
+    for x, y in enumerate(s):
+        if x == 0:
+            if s[x].isupper():
+                counter += 1
+            continue
+        prev = s[x - 1]
+        current = s[x]
+        if (current.isupper() and prev.isupper()) or (current.islower() and prev.islower()):
+            counter += 1
+        else:
+            counter += 2
+    return counter
