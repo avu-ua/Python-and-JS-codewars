@@ -21,3 +21,17 @@
 # 3) For s = "A", the output should be 2 - John hit button Caps Lock, A.
 # 4) For s = "Aa", the output should be 4 - John hit button Caps Lock, A, Caps Lock, a.
 
+# --------------- Slava -------------------------
+
+# ----- SOLUTION 1 - Easy to understand ------------
+def typist(s):
+    if len(s) == 1:
+        return 1 if s.islower() else 2
+    count = len(s) if s[0].islower() else len(s) + 1
+    for i in range(len(s) - 1):
+        if s[i].islower() != s[i+1].islower(): count += 1
+    return count
+
+# ----- SOLUTION 2 - One-liner but confusing ------------
+def typist(s):
+    return sum(list(map(lambda x: 1 if (x == 0 and s[x].isupper()) or (len(s) > 1 and x > 0 and s[x].islower() != s[x-1].islower()) else 0, dict(enumerate(s))))) + len(s)
