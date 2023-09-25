@@ -51,3 +51,19 @@ def typist(s):
         else:
             counter += 2
     return counter
+
+# ------------------------ Mariia ------------------------
+def typist(s):
+    count = 0
+    if s[0].isupper():
+        count += 2
+    else: count += 1
+    
+    for ind in range(1, len(s)):
+            if s[ind].isupper() and s[ind - 1].isupper():
+                count += 1
+            elif s[ind].islower() and s[ind - 1].islower():
+                count += 1
+            else:
+                count += 2
+    return count
