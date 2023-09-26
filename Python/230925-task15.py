@@ -1,7 +1,9 @@
 # Find the odd int
 # https://www.codewars.com/kata/54da5a58ea159efa38000836
 
-
+# ---------------- Slava --------------------------
+def find_it(seq):
+    return [x for x in seq if seq.count(x) % 2 != 0][0]
 
 
 # Simple time difference
