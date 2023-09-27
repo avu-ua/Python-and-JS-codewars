@@ -35,3 +35,28 @@ def solve(arr):
     max_hours = str(int(max(time_differences) // 3600)) if max(time_differences) // 3600 > 9 else "0" + str(int(max(time_differences) // 3600))
     max_minutes = str(int((max(time_differences) - int(max_hours) * 3600) / 60)) if (max(time_differences) - int(max_hours) * 3600) / 60 > 9 else "0" + str(int((max(time_differences) - int(max_hours) * 3600) / 60))
     return max_hours + ":" + max_minutes
+
+# ------------------------ Mariia ------------------------
+def solve(alarms):
+    if len(alarms) == 1:
+        return "23:59"
+    else:
+        alarms_sorted = sorted(list(map(lambda x: x.split(":"), alarms)))
+        minutes = [int(x[0])*60+int(x[1]) for x in alarms_sorted]
+        bigger_interval = 1440 - minutes[-1] + minutes[0]
+        counter = 1
+        for x in minutes:
+            if counter < len(minutes):
+                interval = minutes[counter] - x
+                if interval > bigger_interval:
+                    bigger_interval = interval
+            counter += 1
+            
+        hours = str(bigger_interval // 60)
+        min = str(bigger_interval % 60 - 1)
+        if len(hours) == 1:
+            hours = "0" + hours
+        if len(min) == 1:
+            min = "0" + min
+            
+        return hours +":"+ min
