@@ -5,6 +5,13 @@
 def find_it(seq):
     return [x for x in seq if seq.count(x) % 2 != 0][0]
 
+# ---------------- Olesia --------------------------
+def find_it(seq):
+    seq_dict = {}
+    for i in seq:
+        seq_dict[i] = seq.count(i)
+        if seq_dict[i] % 2 == 1:
+            return i
 
 # Simple time difference
 # https://www.codewars.com/kata/5b76a34ff71e5de9db0000f2
