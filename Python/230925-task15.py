@@ -12,6 +12,17 @@ def find_it(seq):
         seq_dict[i] = seq.count(i)
         if seq_dict[i] % 2 == 1:
             return i
+        
+# ------------------------ Mariia ------------------------
+def find_it(seq):
+    numbers = tuple(seq)
+    for x in numbers:
+        if seq.count(x) % 2 == 1:
+            return x
+
+        
+def find_it(seq):
+    return [x for x in tuple(seq) if seq.count(x)%2 == 1][0]
 
 # Simple time difference
 # https://www.codewars.com/kata/5b76a34ff71e5de9db0000f2
