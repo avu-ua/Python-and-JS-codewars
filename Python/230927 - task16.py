@@ -8,6 +8,16 @@ def two_sum(numbers, target):
             if i != j and numbers[i] + numbers[j] == target:
                 return (i, j)
 
+# ------------- Olesia ----------------------
+def two_sum(numbers, target):
+    for i in range(0, len(numbers)):
+        for j in range(0, len(numbers)):
+            if j == i:
+                continue;
+            if numbers[i] + numbers[j] == target:
+                return (i,j)
+    return None
+
 #Loneliest character
 #https://www.codewars.com/kata/5f885fa9f130ea00207c7dc8
 
