@@ -60,3 +60,39 @@ def solve(alarms):
             min = "0" + min
             
         return hours +":"+ min
+
+# ---------------- Olesia --------------------------
+
+def solve(arr):
+    unique_set = set(arr)
+    arr = list(unique_set)
+
+    if len(arr) == 1:
+        return "23:59"
+    m_time = []
+    m_delta =[]
+
+    for i in arr:
+        h, m = list(map(int, i.split(":")))
+        mm = h * 60 + m
+        m_time.append(mm)
+        m_time.sort()
+
+    for x in range(1, len(m_time)):
+        prev = m_time[x - 1]
+        current = m_time[x]
+        delta = current - prev
+        m_delta.append(delta)
+    if (24 * 60 - m_time[-1] + m_time[0]) > delta:
+        aa = 24 * 60 - m_time[-1] + m_time[0]
+        m_delta.append(aa)
+    max_delta = max(m_delta)-1
+    max_h = int(max_delta / 60)
+    max_m = int(round((max_delta % 60), 0))
+    max_h_str = str(max_h).zfill(2)
+    max_m_str = str(max_m).zfill(2)
+    return max_h_str+ ":" + max_m_str
+
+time_list = ["21:14", "15:34", "14:51", "06:25", "15:30"]
+
+print(solve(time_list))
