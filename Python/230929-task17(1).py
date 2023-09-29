@@ -34,6 +34,7 @@
 # 7 minutes past midnight is 12:07
 # 7 minutes past noon is also 12:07
 
+# ----------------- Slava ------------------------
 import math
 def what_time_is_it(angle):
     hours = math.floor(angle / 30) if math.floor(angle / 30) else 12

@@ -41,3 +41,14 @@
 # Notes
 # Each block falls individually, meaning there are no rigid objects.
 # Think about it like falling sand in Minecraft as opposed to the rigid blocks in Tetris.
+
+
+# ----------------- Slava ------------------------
+def switch_gravity(lst):
+    for column in range(len(lst[0])):
+        blocks = 0
+        for row in range(len(lst)):
+            if lst[row][column] == '#': blocks += 1
+        for row in range(len(lst)):
+            lst[row][column] = '-' if row < len(lst) - blocks else '#'
+    return lst
