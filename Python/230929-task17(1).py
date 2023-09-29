@@ -42,3 +42,16 @@ def what_time_is_it(angle):
     return "{:02d}:{:02d}".format(hours, minutes)
 
 print(what_time_is_it(359))
+
+# ------------------------ Mariia ------------------------
+from math import floor
+def what_time_is_it(angle):
+    hours = str(int(angle // 30))
+    minutes = str(floor((angle % 30) * 2))
+    if hours == "0":
+        hours = "12"
+    if len(hours) == 1:
+        hours = "0" + hours
+    if len(minutes) == 1:
+        minutes = "0" + minutes
+    return hours + ":" + minutes
