@@ -13,7 +13,7 @@ def two_sum(numbers, target):
     for i in range(0, len(numbers)):
         for j in range(0, len(numbers)):
             if j == i:
-                continue;
+                continue
             if numbers[i] + numbers[j] == target:
                 return (i,j)
     return None
@@ -104,5 +104,42 @@ def loneliest(strn):
                 sp = spases
                 lst_alone.append(alpha)
     return list(tuple(lst_alone))
+
+# ------------------------ Olesia ------------------------
+def loneliest(strng):
+    сharter_new = ""
+    count_space ={}
+    my_alfabet = 'abcdefghijklmnopqrstuvwxyz'
+    for i in strng:
+        if i in my_alfabet:
+            count_space[i] = 0
+    count_of_spaces = strng.count(" ")
+
+    key, n = '', 0
+    for v in strng:
+        if v != ' ':
+            if key in count_space:
+                count_space[key] = n
+            key, n = v, 0
+            continue
+        else:
+            n += 1
+    final_count_list = {}
+    prev_k, c1 = '', 0
+    for k in count_space:
+        if prev_k in count_space:
+            c1 = count_space[prev_k]
+        c2 = count_space[k]
+        c = c1 + c2
+        final_count_list[k] = c
+        prev_k = k
+
+    max_list = []
+    max_value = max(final_count_list.values())
+    for kk in final_count_list:
+        if final_count_list[kk] == max_value:
+            max_list.append(kk)
+
+    return max_list
         
     
