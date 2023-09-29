@@ -34,3 +34,10 @@
 # 7 minutes past midnight is 12:07
 # 7 minutes past noon is also 12:07
 
+import math
+def what_time_is_it(angle):
+    hours = math.floor(angle / 30) if math.floor(angle / 30) else 12
+    minutes = math.floor(60 * ((angle - math.floor(angle / 30) * 30) / 30))
+    return "{:02d}:{:02d}".format(hours, minutes)
+
+print(what_time_is_it(359))
