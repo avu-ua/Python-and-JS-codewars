@@ -46,10 +46,8 @@ print(what_time_is_it(359))
 # ------------------------ Mariia ------------------------
 from math import floor
 def what_time_is_it(angle):
-    hours = str(int(angle // 30))
+    hours = str(int(angle // 30)) if int(angle // 30) else "12"
     minutes = str(floor((angle % 30) * 2))
-    if hours == "0":
-        hours = "12"
     if len(hours) == 1:
         hours = "0" + hours
     if len(minutes) == 1:
