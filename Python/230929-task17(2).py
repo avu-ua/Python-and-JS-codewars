@@ -52,3 +52,28 @@ def switch_gravity(lst):
         for row in range(len(lst)):
             lst[row][column] = '-' if row < len(lst) - blocks else '#'
     return lst
+
+# ----------------- Olesia ------------------------
+def switch_gravity(my_list):
+    r_list = []
+    def reverse(my_list):
+        new_list = []
+        n = len(my_list[0])
+        for i in range(n):
+            temp_list = []
+            for a in my_list:
+                temp_list.append(a[i])
+            new_list.append(temp_list)
+        return new_list
+
+    new_list = reverse(my_list)
+
+    for item in new_list:
+        temp_r_list = []
+        for v in item:
+            if v == "-":
+                temp_r_list.insert(0, v)
+            else:
+                temp_r_list.append("#")
+        r_list.append(temp_r_list)
+    return reverse(r_list)
