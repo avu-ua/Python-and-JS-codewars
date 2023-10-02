@@ -11,3 +11,10 @@ def multiplication_table(size):
         subsequent = [r + 1 if not c else (r + 1) * first[c] for c in range(size)]
         res.append(subsequent)
     return res
+
+# ------------------------ Mariia ------------------------
+def multiplication_table(size):
+    result = []
+    for table in range(1, size+1):
+        result.append([x for x in range(table, size*table + 1, table)])
+    return result

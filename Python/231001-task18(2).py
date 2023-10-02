@@ -7,3 +7,12 @@ def domain_name(url):
     start = max(url.find('www.') + 4, url.find('://') + 3) if url.find('www.') != -1 or url.find('://') != -1 else 0
     end = url.find('.', start)
     return url[start:end]
+
+# ------------------------ Mariia ------------------------
+import re
+def domain_name(url):
+    if re.findall("www", url):
+        return re.findall(r"www.\w*", url)[0][4::]
+    if re.findall(r"\/\/", url):
+        return re.findall(r"[\/][\w,-]*\.", url)[0][1:-1]
+    return re.findall(r"\w*\.", url)[0][:-1]

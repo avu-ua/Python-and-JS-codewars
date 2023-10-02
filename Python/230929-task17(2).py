@@ -77,3 +77,16 @@ def switch_gravity(my_list):
                 temp_r_list.append("#")
         r_list.append(temp_r_list)
     return reverse(r_list)
+
+# ------------------------ Mariia ------------------------
+def switch_gravity(lst):
+    rows, cols = len(lst), len(lst[0])
+    
+    blocks_in_column = [sum(lst[row][col] == '#' for row in range(rows)) for col in range(cols)]
+    
+    result = [['-' for _ in range(cols)] for _ in range(rows)]
+    for col, num_blocks in enumerate(blocks_in_column):
+        for row in range(rows - num_blocks, rows):
+            result[row][col] = '#'
+    
+    return result    
