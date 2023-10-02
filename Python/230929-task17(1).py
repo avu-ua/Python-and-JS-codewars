@@ -53,3 +53,15 @@ def what_time_is_it(angle):
     if len(minutes) == 1:
         minutes = "0" + minutes
     return hours + ":" + minutes
+
+# ------------------------ Olesia ------------------------
+import math
+def what_time_is_it(angle):
+    time_mm = angle * 2
+    time_hh = int(time_mm/60)
+    time_m = int(math.floor(time_mm - (time_hh * 60)))
+    time_h_str = str(time_hh).zfill(2)
+    time_m_str = str(time_m).zfill(2)
+    if angle < 30:
+        return "12" + ":" + time_m_str
+    return time_h_str + ":" + time_m_str
