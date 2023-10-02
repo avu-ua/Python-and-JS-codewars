@@ -16,3 +16,17 @@ def domain_name(url):
     if re.findall(r"\/\/", url):
         return re.findall(r"[\/][\w,-]*\.", url)[0][1:-1]
     return re.findall(r"\w*\.", url)[0][:-1]
+
+# ------------------------ Olesia ------------------------
+def domain_name(url):
+    if "http://" in url:
+        url = url.replace("http://", "")
+    elif "https://" in url:
+        url = url.replace("https://", "")
+    elif "http://www." in url:
+        url = url.replace("http://www.", "")
+    if "www." in url:
+        url = url.replace("www.", "")
+    end_index = url.find(".")
+    result = url[:end_index]
+    return result
