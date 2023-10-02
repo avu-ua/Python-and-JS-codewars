@@ -18,3 +18,13 @@ def multiplication_table(size):
     for table in range(1, size+1):
         result.append([x for x in range(table, size*table + 1, table)])
     return result
+
+# ------------------------ Olesia ------------------------
+def multiplication_table(size):
+    total_list = []
+    for i in range(1,size+1):
+        new_list = []
+        for j in range(i,size*i+1, i):
+            new_list.append(j)
+        total_list.append(new_list)
+    return total_list
