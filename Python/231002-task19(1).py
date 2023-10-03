@@ -13,3 +13,9 @@ def find_outlier(integers):
     if len(odd_list) < len(even_list):
         return odd_list[0]
     return even_list[0]
+
+# ------------------------ Mariia ------------------------
+def find_outlier(integers):
+    even = [x for x in integers if x%2 == 0]
+    odd = [x for x in integers if x%2 == 1]
+    return even[0] if len(even) == 1 else odd[0]
