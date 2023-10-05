@@ -20,3 +20,16 @@ def solution(arr):
         if f == 1:
             return True
     return False
+
+# ------------------------ Mariia ------------------------
+from itertools import permutations as prm
+def solution(arr):
+    all_combinations = list(prm(arr, len(arr)))
+    for strings in all_combinations:
+        counter = 0
+        for ind in range(0, len(strings) - 1):
+            if strings[ind][-1] == strings[ind+1][0]:
+                counter +=1
+        if counter == len(arr) - 1:
+            return True
+    return False
