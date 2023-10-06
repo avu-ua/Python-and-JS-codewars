@@ -19,3 +19,10 @@ def find_outlier(integers):
     even = [x for x in integers if x%2 == 0]
     odd = [x for x in integers if x%2 == 1]
     return even[0] if len(even) == 1 else odd[0]
+
+# -------------------- Slava ---------------------
+# NB: Maria, клянуся що я в тебе не списував :-)
+def find_outlier(integers):
+    evens = [x for x in integers if not x % 2]
+    odds = [x for x in integers if x % 2]
+    return evens[0] if len(evens) == 1 else odds[0]
