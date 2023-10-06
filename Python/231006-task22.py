@@ -17,3 +17,17 @@ def find_missing_letter(chars):
             if chars[0].lower() in chars:
                 return my_alfabet[i]
             return my_alfabet[i].upper()
+        
+# ------------------------ Mariia ------------------------
+def find_missing_letter(chars):
+    upper_letters = [chr(i) for i in range(65,91)]
+    lower_letters = [chr(i) for i in range(97,123)]
+    start_ind = upper_letters.index(chars[0]) if chars[0] in upper_letters else lower_letters.index(chars[0])
+    for alpha in chars:
+        if chars[0].isupper():
+            if alpha != upper_letters[start_ind]:
+                return upper_letters[start_ind]
+        else:
+            if alpha != lower_letters[start_ind]:
+                return lower_letters[start_ind]
+        start_ind += 1
