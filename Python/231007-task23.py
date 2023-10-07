@@ -24,3 +24,11 @@ def find_the_crossing(a, b, c, d):
         y = ((a[0]*b[1] - a[1]*b[0])*(c[1] - d[1]) - (a[1] - b[1])*(c[0]*d[1] - c[1]*d[0])) / ((a[0] - b[0])*(c[1] - d[1]) - (a[1] - b[1])*(c[0] - d[0]))
     except: return None
     return (x,y)
+
+# ------------------ Slava --------------------------
+def find_the_crossing(a, b, c, d):
+    z = ((a[0] - b[0]) * (c[1] - d[1]) - (a[1] - b[1]) * (c[0] - d[0]))
+    if not z: return None
+    x = ((a[0] * b[1] - a[1] * b[0]) * (c[0] - d[0]) - (a[0] - b[0]) * (c[0] * d[1] - c[1] * d[0])) / z
+    y = ((a[0] * b[1] - a[1] * b[0]) * (c[1] - d[1]) - (a[1] - b[1]) * (c[0] * d[1] - c[1] * d[0])) / z
+    return (x, y)
