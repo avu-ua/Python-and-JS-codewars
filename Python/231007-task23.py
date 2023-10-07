@@ -16,3 +16,11 @@ def find_the_crossing(a, b, c, d):
     y_crossing = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) /denominator
 
     return x_crossing, y_crossing
+
+# ------------------------ Mariia ------------------------
+def find_the_crossing(a, b, c, d):
+    try:
+        x = ((a[0]*b[1] - a[1]*b[0])*(c[0] - d[0]) - (a[0] - b[0])*(c[0]*d[1] - c[1]*d[0])) / ((a[0] - b[0])*(c[1] - d[1]) - (a[1] - b[1])*(c[0] - d[0]))
+        y = ((a[0]*b[1] - a[1]*b[0])*(c[1] - d[1]) - (a[1] - b[1])*(c[0]*d[1] - c[1]*d[0])) / ((a[0] - b[0])*(c[1] - d[1]) - (a[1] - b[1])*(c[0] - d[0]))
+    except: return None
+    return (x,y)
