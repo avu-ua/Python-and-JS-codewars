@@ -26,3 +26,24 @@
 # Checks the function returns undefined for non-strings
 # Checks that word interiors (the letters between the first and last) maintain the same letters, albeit in a different order
 # Checks that letters are randomly assigned.
+
+# ------------------------ Mariia ------------------------
+import random
+def sample_word(l):
+    mix = ''.join(random.sample(l, len(l)))
+    while mix == l:
+        mix = sample_word(l)
+    return mix
+
+def mix_words(st):
+    words = st.split()
+    new_words = []
+    for word in words:
+        if len(word) <= 3 or not word[-1].isalpha() and len(word) <= 4:
+            new_words.append(word)
+        else:
+            if word[-1].isalpha():
+                new_words.append(word[0] + sample_word(word[1:-1]) + word[-1])
+            else:
+                new_words.append(word[0] + sample_word(word[1:-2]) + word[-2:])
+    return " ".join(new_words)
