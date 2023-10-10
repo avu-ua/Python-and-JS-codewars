@@ -12,3 +12,9 @@ def wave_sort(a):
     a.sort()
     for x in range (0, len(a) - 1, 2):
         a[x], a[x+1] = a[x+1], a[x]
+
+# ------------------------ Olesia ------------------------
+def wave_sort(a):
+    a.sort()
+    for i in range(0,(len(a)),2):
+        a[i], a[i + 1] = a[i + 1], a[i]
