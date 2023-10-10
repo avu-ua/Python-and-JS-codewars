@@ -47,3 +47,32 @@ def mix_words(st):
             else:
                 new_words.append(word[0] + sample_word(word[1:-2]) + word[-2:])
     return " ".join(new_words)
+
+# ------------------------ Olesia ------------------------
+import random
+
+
+def mix_words(st):
+    if type(st) != str:
+        return "undefined"
+
+    result = []
+    words = st.split()
+
+    for word in words:
+        word_without_special_chars = ""
+        special_chars = ""
+        for a in word:
+            if a.isalpha():
+                word_without_special_chars += a
+            else:
+                special_chars += a
+
+        if len(word_without_special_chars) > 3:
+            letters = list(word_without_special_chars[1:-1])
+            random.shuffle(letters)
+            mixed_word = word_without_special_chars[0] + ''.join(letters) + word_without_special_chars[-1] + special_chars
+            result.append(mixed_word)
+        else:
+            result.append(word)
+    return ' '.join(result)
