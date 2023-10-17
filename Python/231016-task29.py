@@ -10,3 +10,10 @@ def parts_sums(ls):
         total_sum -= i
         my_sum.append(total_sum)
     return my_sum
+
+# ------------------------ Mariia ------------------------
+def parts_sums(ls):
+    sum_lst = [sum(ls)]
+    for x in range (0, len(ls)):
+        sum_lst.append(sum_lst[x] - ls[x])
+    return sum_lst
