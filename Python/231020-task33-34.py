@@ -21,3 +21,15 @@ def naughty_or_nice(data):
 
 #Count the Digit
 # https://www.codewars.com/kata/566fc12495810954b1000030/python
+
+# ------------------------ Olesia ------------------------
+def nb_dig(n, d):
+    my_list = []
+    for i in range(n+1):
+        my_list.append(i**2)
+    my_list_str = ','.join(map(str, my_list))
+    n = 0
+    for i in my_list_str:
+        if i == str(d):
+            n += 1
+    return n
