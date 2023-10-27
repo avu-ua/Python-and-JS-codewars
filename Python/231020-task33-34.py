@@ -18,6 +18,17 @@ def naughty_or_nice(data):
     else:
         return "Nice!"
 
+# ------------------------ Mariia ------------------------
+def naughty_or_nice(data):
+    Naughty = 0
+    Nice = 0
+    for month, days in data.items():
+        for day, value in days.items():
+            if value == 'Naughty':
+                Naughty += 1
+            else: Nice += 1
+            
+    return 'Naughty!' if Naughty > Nice else 'Nice!'
 
 #Count the Digit
 # https://www.codewars.com/kata/566fc12495810954b1000030/python
@@ -33,3 +44,8 @@ def nb_dig(n, d):
         if i == str(d):
             n += 1
     return n
+
+# ------------------------ Mariia ------------------------
+def nb_dig(n, d):
+    digits = "".join([str(x*x) for x in range(0, n+1)])
+    return digits.count(str(d))
