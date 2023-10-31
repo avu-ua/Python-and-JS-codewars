@@ -32,3 +32,13 @@ def most_money(students):
         if len(set(money_list)) == 1:
             return "all"
         return students[money_list.index(max(money_list))].name
+
+# ------------------------ Olesia ------------------------
+def most_money(students):
+    my_list = []
+    for i in students:
+        money = i.fives * 5 + i.tens * 10 + i.twenties * 20
+        my_list.append(money)
+    if all(money == my_list[0] and len(my_list) > 1 for money in my_list):
+        return "all"
+    return students[my_list.index(max(my_list))].name
