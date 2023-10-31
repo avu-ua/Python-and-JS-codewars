@@ -11,6 +11,14 @@ class Person():
     def greet(self, your_name):
         return f"Hello {your_name}, my name is {self.name}"
 
+# ------------------------ Olesia ------------------------
+class Person():
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self, your_name):
+        return "Hello %s, my name is %s"% (your_name, self.name)
+
 # Who has the most money?
 # https://www.codewars.com/kata/528d36d7cc451cd7e4000339/train/python
 
