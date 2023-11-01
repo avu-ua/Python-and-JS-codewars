@@ -17,3 +17,11 @@ def merge_arrays(first, second):
             break
     return my_list
 print(merge_arrays([2, 4, 8], [2, 4, 6]))
+
+#task38
+# Count by X
+#https://www.codewars.com/kata/5513795bd3fafb56c200049e/python
+
+#task39
+#altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+#https://www.codewars.com/kata/56efc695740d30f963000557/python
